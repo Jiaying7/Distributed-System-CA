@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package com.example.airquality;
+
+service AirQualityService {
+  rpc GetAirQuality(AirQualityRequest) returns (AirQualityResponse) {}
+  rpc SetAirQualityThreshold(AirQualityThresholdRequest) returns (AirQualityThresholdResponse) {}
+  rpc GetAirQualityHistory(AirQualityHistoryRequest) returns (stream AirQualityHistoryResponse) {}
+}
+
+message AirQualityRequest {
+  // request message fields
+}
+
+message AirQualityResponse {
+  // response message fields
+}
+
+message AirQualityThresholdRequest {
+  // request message fields
+}
+
+message AirQualityThresholdResponse {
+  // response message fields
+}
+
+message AirQualityHistoryRequest {
+  // request message fields
+}
+
+message AirQualityHistoryResponse {
+  // response message fields
+}

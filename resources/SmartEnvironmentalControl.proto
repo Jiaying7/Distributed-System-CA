@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.example.smartenv";
+option java_outer_classname = "SmartEnvProto";
+
+service AirQualityService {
+  rpc GetAirQuality(AirQualityRequest) returns (AirQualityResponse) {}
+  rpc SetAirQualityThreshold(SetThresholdRequest) returns (SetThresholdResponse) {}
+}
+
+service WaterQualityService {
+  rpc GetWaterQuality(WaterQualityRequest) returns (WaterQualityResponse) {}
+  rpc SetWaterQualityThreshold(SetThresholdRequest) returns (SetThresholdResponse) {}
+}
+
+service DeviceDataService {
+  rpc TurnOnDevice(DeviceRequest) returns (DeviceResponse) {}
+  rpc TurnOffDevice(DeviceRequest) returns (DeviceResponse) {}
+  rpc streamDeviceData(DeviceRequest) returns (stream DeviceData) {}
+}
+
+message AirQualityRequest {
+  string deviceId = 1;
+}
+
+message AirQualityResponse {
+  double airQuality = 1;
+}
+
+message SetThresholdRequest {
+  string deviceId = 1;
+  double threshold = 2;
+}
+
+message SetThresholdResponse {
+  bool success = 1;
+}
+
+message WaterQualityRequest {
+  string deviceId = 1;
+}
