@@ -45,8 +45,7 @@
             <artifactId>jmdns</artifactId>
             <version>3.4.1</version>
         </dependency>
-		<dependencies>
-  <!-- gRPC dependencies -->
+		
   <dependency>
     <groupId>io.grpc</groupId>
     <artifactId>grpc-netty-shaded</artifactId>
@@ -62,7 +61,6 @@
     <artifactId>grpc-stub</artifactId>
     <version>1.41.0</version>
   </dependency>
-</dependencies>
 	</dependencies>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
